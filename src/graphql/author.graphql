@@ -1,0 +1,8 @@
+query getAllAuthorsQuery($limit: Int, $cursor: Int) {
+  getAllAuthors(limit: $limit, cursor: $cursor) {
+    id
+    email
+    name
+    image
+  }
+}
