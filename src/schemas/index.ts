@@ -1,12 +1,10 @@
 import { GraphQLObjectType, GraphQLSchema, GraphQLString } from "graphql";
+import { AuthorResolver } from "./authors/author.resolvers";
 
 const RootQuery = new GraphQLObjectType({
   name: "Query",
   fields: {
-    hello: {
-      type: GraphQLString,
-      resolve: () => "world",
-    },
+    ...AuthorResolver,
   },
 });
 
