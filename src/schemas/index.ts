@@ -1,15 +1,18 @@
-import { GraphQLObjectType, GraphQLSchema, GraphQLString } from "graphql";
+import {
+  GraphQLFieldConfigArgumentMap,
+  GraphQLFieldResolver,
+  GraphQLObjectType,
+  GraphQLOutputType,
+  GraphQLSchema,
+  GraphQLString,
+} from "graphql";
 import { AuthorResolver } from "./authors/author.resolvers";
 
 export type fields = {
   [key: string]: {
-    type: any;
-    args: {
-      [key: string]: {
-        type: any;
-      };
-    };
-    resolve: (parent: any, args: any) => void;
+    type: GraphQLOutputType;
+    args: GraphQLFieldConfigArgumentMap | undefined;
+    resolve: GraphQLFieldResolver<any, any, any, unknown> | undefined;
   };
 };
 
@@ -25,7 +28,8 @@ const Mutation = new GraphQLObjectType({
   fields: {
     hello: {
       type: GraphQLString,
-      resolve: () => "world",
+      args: { name: { type: GraphQLString } },
+      resolve: (parent, args) => "world",
     },
   },
 });
