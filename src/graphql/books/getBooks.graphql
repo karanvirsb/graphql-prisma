@@ -1,0 +1,11 @@
+query getBooks($limit: Int, $page: Int) {
+  getBooks(limit: $limit, page: $page) {
+    id
+    author {
+      name
+    }
+    title
+    image_url
+    categories
+  }
+}
