@@ -3,7 +3,7 @@ import { fields } from "..";
 import prisma from "../../../prisma";
 import { BookType } from "./typeDef";
 
-const BookResolver: fields = {
+export const BookResolver: fields = {
   getBooks: {
     type: new GraphQLList(BookType),
     args: { limit: { type: GraphQLInt }, page: { type: GraphQLInt } },
