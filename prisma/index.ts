@@ -1,5 +1,5 @@
 import { PrismaClient } from "@prisma/client";
-
+import { LoremIpsum } from "lorem-ipsum";
 const prisma = new PrismaClient();
 export default prisma;
 
@@ -7,6 +7,8 @@ import books from "../src/model/books.json";
 import authors from "../src/model/authors.json";
 import publishers from "../src/model/publisher.json";
 import libraries from "../src/model/libraries.json";
+
+const lorem = new LoremIpsum({ sentencesPerParagraph: { max: 4, min: 2 } });
 
 async function main() {
   await createBooks();
@@ -28,7 +30,7 @@ async function createBooks() {
       data: {
         asin: book.asin,
         currency: book.currency,
-        description: book.description,
+        description: lorem.generateParagraphs(3),
         format: book.format,
         image_url: book.image_url,
         images_count: book.images_count,
@@ -59,4 +61,8 @@ async function createBooks() {
       },
     });
   }
+}
+
+async function clearBooks() {
+  await prisma.book.deleteMany();
 }
