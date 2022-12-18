@@ -18,6 +18,7 @@ specifiers:
   graphql-request: ^5.0.0
   graphql-tag: ^2.12.6
   graphql-type-json: ^0.3.2
+  lorem-ipsum: ^2.0.8
   next: 13.0.6
   react: 18.2.0
   react-dom: 18.2.0
@@ -31,6 +32,7 @@ dependencies:
   eslint: 8.29.0
   eslint-config-next: 13.0.6_eslint@8.29.0+typescript@4.9.4
   graphql-type-json: 0.3.2_graphql@16.6.0
+  lorem-ipsum: 2.0.8
   next: 13.0.6_react-dom@18.2.0+react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -2583,6 +2585,11 @@ packages:
       delayed-stream: 1.0.0
     dev: true
 
+  /commander/9.4.1:
+    resolution: {integrity: sha512-5EEkTNyHNGFPD2H+c/dXXfQZYa/scCKasxWcXJaWnNJ99pnQN9Vnmqow+p+PlFPE63Q6mThaZws1T+HxfpgtPw==}
+    engines: {node: ^12.20.0 || >=14}
+    dev: false
+
   /common-tags/1.8.2:
     resolution: {integrity: sha512-gk/Z852D2Wtb//0I+kRFNKKE9dIIVirjoqPoA1wJU+XePVXZfGeBpk45+A1rKO4Q43prqWBNY/MiIeRLbPWUaA==}
     engines: {node: '>=4.0.0'}
@@ -4234,6 +4241,14 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: 4.0.0
+
+  /lorem-ipsum/2.0.8:
+    resolution: {integrity: sha512-5RIwHuCb979RASgCJH0VKERn9cQo/+NcAi2BMe9ddj+gp7hujl6BI+qdOG4nVsLDpwWEJwTVYXNKP6BGgbcoGA==}
+    engines: {node: '>= 8.x', npm: '>= 5.x'}
+    hasBin: true
+    dependencies:
+      commander: 9.4.1
+    dev: false
 
   /lower-case-first/2.0.2:
     resolution: {integrity: sha512-EVm/rR94FJTZi3zefZ82fLWab+GX14LJN4HrWBcuo6Evmsl9hEfnqxgcHCKb9q+mNf6EVdsjx/qucYFIIB84pg==}
