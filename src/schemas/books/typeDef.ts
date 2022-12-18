@@ -3,8 +3,10 @@ import {
   GraphQLInt,
   GraphQLList,
   GraphQLObjectType,
+  GraphQLScalarType,
   GraphQLString,
 } from "graphql";
+import GraphQLJSON from "graphql-type-json";
 import { AuthorType } from "../authors/typedef";
 import { LibraryType } from "../libraries/typeDef";
 import { PublisherType } from "../publishers/typeDef";
@@ -28,7 +30,7 @@ export const BookType = new GraphQLObjectType({
     currency: { type: GraphQLString },
     description: { type: GraphQLString },
     final_price: { type: GraphQLFloat },
-    format: { type: new GraphQLList(formatType) },
+    format: { type: GraphQLJSON },
     image_url: { type: GraphQLString },
     images_count: { type: GraphQLInt },
     item_weight: { type: GraphQLString },
