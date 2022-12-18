@@ -1,0 +1,34 @@
+query getABook($getABookId: Int) {
+  getABook(id: $getABookId) {
+    id
+    author {
+      name
+      image
+      id
+    }
+    categories
+    currency
+    final_price
+    format
+    description
+    ISBN10
+    image_url
+    item_weight
+    libraries {
+      address
+      name
+      phone
+      id
+    }
+    product_dimensions
+    rating
+    reviews_count
+    title
+    url
+    publisher {
+      id
+      name
+      phone
+    }
+  }
+}
