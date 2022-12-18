@@ -1,4 +1,4 @@
-import { GraphQLInt, GraphQLList } from "graphql";
+import { GraphQLInt, GraphQLList, GraphQLString } from "graphql";
 import { resolve } from "path";
 import { fields } from "..";
 import prisma from "../../../prisma";
@@ -23,7 +23,25 @@ export const BookResolver: fields = {
       });
     },
   },
-
+  getBooksByTitle: {
+    type: new GraphQLList(BookType),
+    args: {
+      title: { type: GraphQLString },
+      page: { type: GraphQLInt },
+      limit: { type: GraphQLInt },
+    },
+    async resolve(parent: any, args: any) {
+      const { title, limit, page } = args;
+      return await prisma.book.findMany({
+        where: { title: { contains: title } },
+        take: limit,
+        skip: page * limit,
+        orderBy: {
+          title: "asc",
+        },
+      });
+    },
+  },
   getABookById: {
     type: BookType,
     args: { id: { type: GraphQLInt } },
