@@ -1,4 +1,5 @@
 import { GraphQLInt, GraphQLList } from "graphql";
+import { resolve } from "path";
 import { fields } from "..";
 import prisma from "../../../prisma";
 import { BookType } from "./typeDef";
@@ -20,6 +21,19 @@ export const BookResolver: fields = {
           libraries: true,
         },
       });
+    },
+  },
+
+  getABook: {
+    type: BookType,
+    args: { id: { type: GraphQLInt } },
+    async resolve(parent: any, args: any) {
+      const { id } = args;
+      const resp = await prisma.book.findFirst({
+        where: { id: { equals: id } },
+        include: { author: true, libraries: true, publisher: true },
+      });
+      return resp;
     },
   },
 };
