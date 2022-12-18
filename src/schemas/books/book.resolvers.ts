@@ -14,6 +14,11 @@ export const BookResolver: fields = {
         skip: page * limit,
         take: limit,
         orderBy: { title: "asc" },
+        include: {
+          author: true,
+          publisher: true,
+          libraries: true,
+        },
       });
     },
   },
