@@ -7,6 +7,7 @@ import {
   GraphQLString,
 } from "graphql";
 import { AuthorResolver } from "./authors/author.resolvers";
+import { BookResolver } from "./books/book.resolvers";
 
 export type fields = {
   [key: string]: {
@@ -20,6 +21,7 @@ const RootQuery = new GraphQLObjectType({
   name: "Query",
   fields: {
     ...AuthorResolver,
+    ...BookResolver,
   },
 });
 
