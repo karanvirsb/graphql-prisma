@@ -24,7 +24,7 @@ export const BookResolver: fields = {
     },
   },
 
-  getABook: {
+  getABookById: {
     type: BookType,
     args: { id: { type: GraphQLInt } },
     async resolve(parent: any, args: any) {

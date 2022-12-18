@@ -1,5 +1,5 @@
-query getABook($getABookId: Int) {
-  getABook(id: $getABookId) {
+query getABookById($getABookId: Int) {
+  getABookById(id: $getABookId) {
     id
     author {
       name
