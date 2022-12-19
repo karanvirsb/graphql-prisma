@@ -10,3 +10,4 @@ export default BookDb;
 
 // types from db
 export type getBooks = typeof BookDb.getBooks;
+export type getBooksByTitle = typeof BookDb.getBooksByTitle;
