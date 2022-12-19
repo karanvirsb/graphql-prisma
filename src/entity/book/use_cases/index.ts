@@ -6,16 +6,19 @@ const getPaginatedBooks = makePaginatedBooks({
   getPaginatedBooks: BookDb.getBooks,
 });
 
-const getBooksByTitle = makeGetBooksByTitle({
+const getBooksByTitleUseCase = makeGetBooksByTitle({
   getBooksByTitle: BookDb.getBooksByTitle,
 });
 
 // types for use cases
 export type getPaginatedBooksType = typeof getPaginatedBooks;
-export type getBooksByTitleType = typeof getBooksByTitle;
+export type getBooksByTitleType = typeof getBooksByTitleUseCase;
 
-const bookServices = Object.freeze({ getPaginatedBooks, getBooksByTitle });
+const bookServices = Object.freeze({
+  getPaginatedBooks,
+  getBooksByTitleUseCase,
+});
 
 export default bookServices;
 
-export { getPaginatedBooks, getBooksByTitle };
+export { getPaginatedBooks, getBooksByTitleUseCase };
