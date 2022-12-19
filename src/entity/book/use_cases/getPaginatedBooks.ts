@@ -1,4 +1,4 @@
-import { getBooks } from "../db/book-db";
+import { getBooks } from ".";
 
 export default function makePaginatedBooks({
   getPaginatedBooks,
