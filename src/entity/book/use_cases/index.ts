@@ -1,7 +1,6 @@
 import BookDb from "../db";
+import makeGetBooksByTitle from "./getBooksByTitle";
 import makePaginatedBooks from "./getPaginatedBooks";
-// types from db
-export type getBooks = typeof BookDb.getBooks;
 
 const getPaginatedBooks = makePaginatedBooks({
   getPaginatedBooks: BookDb.getBooks,
