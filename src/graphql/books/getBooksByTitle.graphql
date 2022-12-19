@@ -1,0 +1,11 @@
+query getBooksByTitle($title: String, $limit: Int, $page: Int) {
+  getBooksByTitle(title: $title, limit: $limit, page: $page) {
+    id
+    author {
+      name
+    }
+    title
+    image_url
+    categories
+  }
+}
