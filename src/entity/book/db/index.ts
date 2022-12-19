@@ -7,3 +7,6 @@ export type db = {
 
 const BookDb = makeBookDb({ db: prisma.book });
 export default BookDb;
+
+// types from db
+export type getBooks = typeof BookDb.getBooks;
