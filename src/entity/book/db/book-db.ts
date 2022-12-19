@@ -1,4 +1,19 @@
 import { db } from ".";
+import { Book, Author, Publisher, Library } from "@prisma/client";
+
+export type getBooks = ({
+  limit,
+  page,
+}: {
+  limit: number;
+  page: number;
+}) => Promise<
+  (Book & {
+    author: Author;
+    publisher: Publisher;
+    libraries: Library;
+  })[]
+>;
 
 export default function makeBookDb({ db }: db) {
   return Object.freeze({
