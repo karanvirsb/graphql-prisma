@@ -18,7 +18,7 @@ export function mockBook({
     author_id: 1,
     currency: "USD",
     description: casual.catch_phrase,
-    final_price: "$" + casual.integer,
+    final_price: casual.random,
     format: JSON.stringify([
       { name: casual.name, price: "$" + casual.integer(), url: casual.url },
     ]),
