@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "generate": "graphql-codegen",
-    "test": "jest --watch --runInBand --silent"
+    "test-workers": "jest --watch --silent",
+    "test-inBand": "jest --watch --runInBand --silent"
   },
   "dependencies": {
     "@types/node": "18.11.14",
