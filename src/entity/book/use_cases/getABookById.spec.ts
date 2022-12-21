@@ -33,11 +33,11 @@ describe("Getting a book by id", () => {
     });
 
     // const addedBook = await prismaMock.book.create({ data: book });
-    prismaMock.book.findFirst.mockResolvedValue(book);
+    // prismaMock.book.findFirst.mockResolvedValue(book);
 
     // const foundBook = await prismaMock.book.findMany();
     const foundBook = await getABookById({ id: 0 });
 
-    expect(foundBook?.id).not.toBe(0);
+    expect(foundBook).toBe(undefined);
   });
 });
