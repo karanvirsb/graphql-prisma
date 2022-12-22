@@ -8,6 +8,7 @@ specifiers:
   '@graphql-codegen/typescript-graphql-request': ^4.5.8
   '@graphql-codegen/typescript-operations': ^2.5.10
   '@graphql-codegen/typescript-react-query': ^4.0.6
+  '@graphql-tools/mock': ^8.7.14
   '@prisma/client': ^4.7.1
   '@types/jest': ^29.2.4
   '@types/node': 18.11.14
@@ -52,6 +53,7 @@ devDependencies:
   '@graphql-codegen/typescript-graphql-request': 4.5.8_add2d07436328ceccda186e7171525b4
   '@graphql-codegen/typescript-operations': 2.5.10_graphql@16.6.0
   '@graphql-codegen/typescript-react-query': 4.0.6_graphql@16.6.0
+  '@graphql-tools/mock': 8.7.14_graphql@16.6.0
   '@prisma/client': 4.7.1
   '@types/jest': 29.2.4
   graphql: 16.6.0
@@ -1450,6 +1452,18 @@ packages:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       '@graphql-tools/utils': 8.12.0_graphql@16.6.0
+      graphql: 16.6.0
+      tslib: 2.4.1
+    dev: true
+
+  /@graphql-tools/mock/8.7.14_graphql@16.6.0:
+    resolution: {integrity: sha512-kIYirhGqhhSI6p/5qj95U8Lngm4mml5B3Z/r7ShI4+/EACyOOV+wUlql45+Y21b9NRUxJbsNHpztGxzgCSyviQ==}
+    peerDependencies:
+      graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+    dependencies:
+      '@graphql-tools/schema': 9.0.12_graphql@16.6.0
+      '@graphql-tools/utils': 9.1.3_graphql@16.6.0
+      fast-json-stable-stringify: 2.1.0
       graphql: 16.6.0
       tslib: 2.4.1
     dev: true
